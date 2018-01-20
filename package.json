@@ -1,0 +1,22 @@
+{
+  "name": "quien-es-quien",
+  "version": "1.0.0",
+  "description": "Quien es Quien game",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pfeldman/quienesquien.git"
+  },
+  "author": "pfeldman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pfeldman/quienesquien/issues"
+  },
+  "homepage": "https://github.com/pfeldman/quienesquien#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
