@@ -21,11 +21,8 @@
   "homepage": "https://github.com/pfeldman/quienesquien#readme",
   "dependencies": {
     "express": "^4.16.2",
-    "mongodb": "^3.0.1"
-  },
-  "devDependencies": {
+    "mongodb": "^3.0.1",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
-    "rimraf": "^2.6.2"
   }
 }
