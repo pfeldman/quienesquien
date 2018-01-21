@@ -26,6 +26,15 @@ class App {
         })
     }
 
+    getQuestions(gameId) {
+        return new Promise(resolve => {
+            const questions = this.dbo.collection('question');
+
+            questions.find({'gameID': gameId}).toArray()
+                .then(questions => resolve(questions));
+        });
+    }
+
     game() {
         return new Promise(resolve => {
             const query = {};
@@ -38,7 +47,11 @@ class App {
                     this.getCatgories(item.id)
                         .then(categories => {
                             item.categories = categories;
-                            resolve(item);
+                            this.getQuestions(item.id)
+                                .then(questions => {
+                                    item.questions = questions;
+                                    resolve(item);
+                                });
                         })
                 });
         })
