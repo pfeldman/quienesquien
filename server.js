@@ -1,12 +1,10 @@
-var express = require('express');
-var app = express();
-var connect = require('./db');
+import connect from './db';
+import App from './app';
 
-app.get('/', function (req, res) {
-    res.send('Hello World!');
-});
-
-app.listen(process.env.PORT || 3000, function () {
-    connect();
-    console.log('Example app listening on port 3000!');
-});
+connect()
+    .then(db => {
+        const dbName = 'heroku_t7kth0pg';
+        const application = new App(db.db(dbName));
+        application.boot();
+    })
+    .catch(() => console.error('Error getting the app up'));
